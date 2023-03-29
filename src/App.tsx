@@ -1,6 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.css'
+import "bootstrap/dist/css/bootstrap.css";
+import AddTodo from "./components/todos/addTodo";
+import { useState } from "react";
+import { Todo } from "./models.types.ts/todos";
+
 
 function App() {
+  const [todos, setTodos] = useState<Todo[]>([]);
+
   return (
     <body>
       <div className="App">
@@ -20,16 +26,7 @@ function App() {
               <p className="lead text-muted">
                 To get started, add some items to your list:
               </p>
-              <div className="form-inline">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control mx-sm-3"
-                    placeholder="i want to do ..."
-                  />
-                  <button className="btn btn-primary">add</button>
-                </div>
-              </div>
+              <AddTodo add={setTodos} />
             </div>
           </section>
           <div className="todosList">
@@ -58,7 +55,10 @@ function App() {
                       <button type="button" className="btn btn-info btn-sm">
                         edit
                       </button>
-                      <button type="button" className="btn btn-danger btn-sm ml-1">
+                      <button
+                        type="button"
+                        className="btn btn-danger btn-sm ml-1"
+                      >
                         delete
                       </button>
                     </div>
@@ -71,7 +71,10 @@ function App() {
                       <button type="button" className="btn btn-info btn-sm">
                         edit
                       </button>
-                      <button type="button" className="btn btn-danger btn-sm ml-1">
+                      <button
+                        type="button"
+                        className="btn btn-danger btn-sm ml-1"
+                      >
                         delete
                       </button>
                     </div>
@@ -84,7 +87,10 @@ function App() {
                       <button type="button" className="btn btn-info btn-sm">
                         edit
                       </button>
-                      <button type="button" className="btn btn-danger btn-sm ml-1">
+                      <button
+                        type="button"
+                        className="btn btn-danger btn-sm ml-1"
+                      >
                         delete
                       </button>
                     </div>
